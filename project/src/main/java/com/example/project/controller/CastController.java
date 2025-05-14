@@ -45,6 +45,10 @@ public class CastController {
             cast.setAge(updatedCast.getAge());
             return castRepository.save(cast);
         }).orElseThrow(() -> new RuntimeException("Cast not found with id " + id));
+
+
+
+
     }
 
 
