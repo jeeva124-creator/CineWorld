@@ -18,5 +18,4 @@ public interface TheaterService {
 
     boolean deleteTheater(int id);
     List<Theater> findTheaterById(int id);
-
 }

@@ -11,7 +11,7 @@ import java.lang.Long;
 
 @RestController
 @RequestMapping("/movies")
-@CrossOrigin("http://127.0.0.1:5500")
+@CrossOrigin("http://127.0.0.1:5501")
 public class MovieController {
 
     @Autowired
