@@ -1,0 +1,104 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+  <title>Admin Panel – Seat Manager</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+    }
+    label, select, button {
+      margin: 10px 0;
+      display: block;
+    }
+    button {
+      padding: 10px 20px;
+      background-color: #1e90ff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #007acc;
+    }
+    #seat-container {
+      margin-top: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      max-width: 500px;
+    }
+    .seat {
+      padding: 10px;
+      background-color: #f0f0f0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      min-width: 40px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Admin Panel – Seat Manager</h2>
+
+  <label for="screenId">Select Screen ID:</label>
+  <select id="screenId">
+    <option value="1">Screen 1</option>
+    <option value="2">Screen 2</option>
+    <option value="3">Screen 3</option>
+  </select>
+
+  <button onclick="generateSeats()">Generate Seats</button>
+  <button onclick="viewSeats()">View Seats</button>
+
+  <p id="result" style="margin-top: 20px; font-weight: bold;"></p>
+
+  <div id="seat-container"></div>
+
+  <script>
+    function generateSeats() {
+      const screenId = document.getElementById('screenId').value;
+
+      fetch(``, {
+        method: 'POST'
+      })
+      .then(response => {
+        if (!response.ok) throw new Error("Failed to generate seats");
+        return response.text();
+      })
+      .then(data => {
+        document.getElementById('result').innerText = data;
+      })
+      .catch(error => {
+        document.getElementById('result').innerText = error.message;
+      });
+    }
+
+    function viewSeats() {
+      const screenId = document.getElementById('screenId').value;
+
+      fetch(``)
+      .then(response => {
+        if (!response.ok) throw new Error("Failed to fetch seats");
+        return response.json();
+      })
+      .then(data => {
+        const container = document.getElementById('seat-container');
+        container.innerHTML = '';
+        data.forEach(seat => {
+          const seatDiv = document.createElement('div');
+          seatDiv.classList.add('seat');
+          seatDiv.innerText = seat.rowLabel + seat.seatNumber;
+          container.appendChild(seatDiv);
+        });
+      })
+      .catch(error => {
+        document.getElementById('result').innerText = error.message;
+      });
+    }
+  </script>
+
+</body>
+</html> -->

@@ -1,0 +1,289 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* font-family: "Karla", serif; */
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+}
+
+body {
+  /* font-family: Arial, sans-serif; */
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin: 0;
+  padding: 0;
+ 
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: white;
+  color:#eb4e62;
+}
+
+header .logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color:#eb4e62;
+  font-weight: bold;
+}
+
+.order{
+text-decoration: none;
+align-items: center;
+width: 100%;
+color: black;
+}
+.logout-btn{
+  text-decoration: none;
+ color: black;
+
+}
+#loginWrapper{
+  text-decoration: none;
+}
+#loginButton{
+  margin-left: 10px;
+  padding: 5px 10px;
+  background-color: #ffffff;
+  border: 1px solid #ff0000;
+  color:#eb4e62;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: bold;
+}
+#loginButton a {
+  text-decoration: none;
+}
+i{
+  margin-top: 10px;
+  font-size: 30px;
+}
+.user-actions button {
+  margin-left: 10px;
+  padding: 5px 10px;
+  background-color: #ffffff;
+  border: 1px solid #ff0000;
+  color:#eb4e62;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: bold;
+}
+.error{
+  color:#eb4e62;
+  font-size: 25px;
+  text-align: center;
+
+
+}
+.movie-card{
+  padding: 13px;
+  border: 1px solid gray;
+  margin:10px;
+  border-radius: 5px;
+  
+}
+.movie-card p{
+  padding: 5px;
+}
+.movie-card a{
+  margin: 10px;
+}
+
+.search-bar {
+  display: flex;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.search-bar input {
+  width: 50%;
+  padding: 10px;
+  margin-right: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.search-bar button {
+  padding: 10px 20px;
+  background-color:#eb4e62;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+.not-found-message{
+  text-align: center;
+  color: #ff0000;
+  display: none;
+
+}
+.search-input {
+  width: 500px;
+  padding: 7px;
+  border-radius: 8px;
+  margin-top: 10px;
+  align-items: center;
+}
+.search-input:focus {
+  outline: none;
+  border: 1px solid #eb4e62;
+}
+#carouselExample {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+}
+#trendingMovies {
+  margin: 30px;
+}
+.movie-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px;
+  flex-wrap: wrap;
+  padding: 1px;
+
+  width: 300px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.movie-container h3 {
+  text-align: center;
+  
+}
+.movies-flux {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
+}
+.movieName {
+  display: inline;
+}
+
+.movie-list a {
+  color: black;
+  text-decoration: none;
+}
+
+.movie-list {
+  margin-left: 30px;
+  /* display: flex; */
+}
+
+.logo {
+  height: 70px;
+  width: 100px;
+  margin-left: 30px;
+}
+.fa-solid  {
+
+  
+  border-radius: 50%;
+  width: 50px !important;
+  cursor: pointer;
+}
+.btn-primary{
+ border-radius: 50%;
+ padding: 5px;
+
+}
+.movies-flux img {
+  width: 200px;
+  height: auto;
+  height: 300px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.movie-item h3 {
+  margin: 10px 0;
+  font-size: 1.5rem;
+}
+.movie-item p {
+  font-size: 2rem;
+  color: black;
+}
+.bookTicketButton {
+  color: white;
+  background-color: #eb4e62;
+  border: none;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 10px;
+  text-align: center;
+  text-decoration: none;
+  width: 120px;
+}
+.bookTicketButton:hover {
+  color: #eb4e62;
+  background-color: white;
+  border: 1px solid #eb4e62;
+}
+
+.loginButton {
+  height: 100px;
+  background-color: black;
+  width: 100%;
+
+  display: none;
+}
+h3 {
+  color: black !important;
+}
+
+footer {
+  background-color: white;
+  color: #eb4e62;
+  text-align: center;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+footer p {
+  margin: 0;
+  font-size: 14px;
+}
+
+footer .social-media a {
+  color:#eb4e62;
+  margin: 0 10px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: black; 
+}
+
+
+.carousel-control-prev-icon:hover,
+.carousel-control-next-icon:hover {
+  background-color: #333; 
+}
+
+

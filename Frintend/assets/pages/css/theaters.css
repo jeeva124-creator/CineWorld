@@ -1,0 +1,231 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+    font-family: "Karla", serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+  }
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: white;
+    color: red;
+  }
+  header .logo {
+    font-size: 24px;
+    font-weight: bold;
+  }
+.movieName img{
+  width: 200px;
+  border-radius: 10px;
+  height: 300px;
+  display: flex;
+
+}
+.movieName{
+  margin-left:200px;
+  
+}
+.movieName p h1 {
+  text-align: center;
+}
+
+.container-movie{
+  display: flex;
+  justify-content: space-between;
+}
+
+.showTimings{
+  display: none;
+}
+
+main {
+  padding: 20px;
+  text-align: center;
+}
+.date-selection {
+display: flex;
+}
+#dateContainer{
+  display: flex;
+  align-items: self-end;
+  margin: 20px;
+  gap: 20px;
+}
+.dateItems{
+  gap: 10px;
+  border: 1px solid;
+  width: 100px;
+  text-align: center;
+  padding: 7px;
+
+
+}
+
+.date-buttons {
+  display: flex;
+  justify-content: end;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 15px;
+}
+
+.dateItems:hover {
+  background-color:red;
+  color: white;
+}
+.dateItems.active {
+  background-color:red;
+  color: white;
+  font-weight: bold;
+}
+
+.btn {
+  height: 100px;
+  background-color:red;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+/* Date Section */
+.date-section {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 2rem;
+}
+
+.date-section h2 {
+  margin-bottom: 1rem;
+  color: black;
+}
+
+#dateContainer {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  padding: 0.5rem 0;
+}
+
+.dateItems {
+  background-color: white;
+  border: 1px solid #e0e0e0;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 100px;
+  text-align: center;
+}
+
+.dateItems:hover {
+  background-color:#eb4e62;
+  color: white;
+  border-color: #eb4e62;
+}
+
+.dateActive {
+  background-color: #eb4e62;
+  color: white;
+  border-color: #eb4e62;
+}
+
+/* Theaters Section */
+.theaters-section {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 2rem;
+}
+
+.theaters-section h2 {
+  margin-bottom: 1rem;
+  color: black;
+}
+
+.showdiv {
+  background-color: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.theaterName {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.timeContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+ .showTimeBtn{
+  background-color: white;
+  border: 2px solid;
+  color: #eb4e62;
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease
+ }
+
+
+ .showTimeBtn:hover {
+  background-color: #eb4e62;
+  color: white;
+}
+
+.service {
+  display: flex;
+  gap: 2rem;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e0e0e0;
+}
+
+.mobil, .food {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #666;
+}
+
+.mobil img, .food img {
+  width: 24px;
+  height: 24px;
+}
+
+@media (max-width: 768px) {
+  .movie-info {
+      flex-direction: column;
+  }
+
+  .movieName {
+      margin-left: 50px;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+  }
+
+  .timeContainer {
+      justify-content: center;
+  }
+
+  .service {
+      flex-direction: column;
+      gap: 1rem;
+  }
+}

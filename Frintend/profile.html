@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+     <link rel="stylesheet" href="/assets/pages/css/profile.css">
+     <link rel="icon" type="image/x-icon" href="/assets/logo/logo1.png">
+</head>
+<body>
+    <div class="sidebar">
+       <a href="/index.html"><h2>CineWorld</h2></a> 
+
+        <a href="#profile" class="active" onclick="showSection('profile')">Profile Details</a>
+        <a href="#bookings" onclick="showSection('bookings')">My Bookings</a>
+            </div>
+
+    <button class="logout-btn" id="logoutBtn">Logout</button>
+
+    <div class="main-content">
+        <!-- Profile Section -->
+        <div id="profile" class="section">
+            <h1>Profile Details</h1>
+            <div class="profile-info">
+                <div>
+                    <label>Name:</label>
+                    <span>Jeevanantham </span>
+                </div>
+                <div>
+                    <label>Email:</label>
+                    <span>rjeevanantham20@gmail.com</span>
+                </div>
+                <div> 
+                    <label>Phone Number:</label>
+                    <span>6369832705</span>
+                </div>
+                <div>
+                  
+                </div>       
+            </div>
+            </div>
+        </div>
+
+        <!-- Bookings Section -->
+        <div id="bookings" class="section" style="display: none;">
+            <h1>My Bookings</h1>
+            <div class="bookings-list">   
+              
+        </div>
+
+        
+    </div>
+    <script type="module">
+// Firebase and other initialization code stays as it is
+import { initializeApp } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js";
+import { getDatabase, ref, set,get } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-database.js";
+import { getAuth, onAuthStateChanged, signOut ,createUserWithEmailAndPassword,} from "https://www.gstatic.com/firebasejs/11.1.0/firebase-auth.js";
+import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-analytics.js";
+
+// Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyAFcYTP81HkpKz468_YVdZjbdpn7BSEzIc",
+  authDomain: "movie-ticket-booking-a713e.firebaseapp.com",
+  databaseURL: "https://movie-ticket-booking-a713e-default-rtdb.firebaseio.com",
+  projectId: "movie-ticket-booking-a713e",
+  storageBucket: "movie-ticket-booking-a713e.firebasestorage.app",
+  messagingSenderId: "791048807463",
+  appId: "1:791048807463:web:bbb600b5a3a3b2e26eda02",
+  measurementId: "G-ZK48NYGYDP",
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const db = getDatabase(app);
+const auth = getAuth();
+
+
+console.log("page lodesd");
+
+
+// Logout button event listener
+let logout=document.querySelector(".logout-btn")
+ logout.addEventListener("click", function () {
+  console.log("Sign-out initiated...");
+  alert("Logging out...");
+  
+
+  // Firebase sign-out process
+  signOut(auth)
+    .then(() => {
+      console.log("Sign-out successful.");
+    
+      localStorage.clear();
+
+   
+    //   document.getElementById("logout-btn").style.display = "none";
+
+      window.location.href = "index.html";
+    })
+
+    .catch((error) => {
+    
+      console.error("An error occurred during sign-out:", error.message);
+      alert("Sign-out failed. Please try again.");
+    });
+});
+
+
+
+
+
+        window.showSection= function (sectionId) {
+            // Hide all sections
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => section.style.display = 'none');
+
+            // Remove active class from all links
+            const links = document.querySelectorAll('.sidebar a');
+            links.forEach(link => link.classList.remove('active'));
+
+            // Show the selected section
+            document.getElementById(sectionId).style.display = 'block';
+
+            // Add active class to the clicked link
+            event.target.classList.add('active');
+            
+        }
+        getBookings()
+
+
+        const bookingContainer=document.querySelector(".bookings-list")
+        async function getBookings() {
+        let userEmail=localStorage.getItem("loggedInAccount").replace(".","_")
+        const theaterTimeRef = ref(db, `orders/${userEmail}`);
+        let data= await get(theaterTimeRef); 
+      
+        
+
+        let bookedData=data.val()
+        console.log(bookedData);
+        let bookedDataKeys=null;
+
+        if(bookedData){
+            bookedDataKeys =  Object.keys(bookedData)
+        }
+        
+        function getDate(date){
+          
+            const year = new Date().getFullYear();
+   
+            const formattedDate = `${date} ${year}`
+            return formattedDate;
+        }
+        
+        if (bookedDataKeys){
+            bookedDataKeys.forEach((key,index) => {
+                let order=bookedData[key]
+                let div=document.createElement("div")
+                div.classList.add('booking-card')
+                div.innerHTML=`<h2>Booking #${Math.floor(10000 + Math.random() * 90000)+index}</h2>
+                    <p><strong>Movie:</strong><b> ${order.movie.slice(1,-1)}</b></p>
+                    <p><strong>Date:</strong> ${getDate(order.ShowDate)}</p>
+                    <p><strong>Time:</strong> ${order.timeing}</p>
+                    <p><strong>Seats:</strong>${order.selectedSeats}</p>`
+                bookingContainer.appendChild(div)
+        });
+        }
+    }
+     
+    
+    
+    
+      
+    </script>
+</body>
+</html>
